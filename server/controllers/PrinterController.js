@@ -1,6 +1,8 @@
 const {show_All_Printer, add_Printer, delete_Printer, search_Printer, edit_Printer, showInfo_Printer, enable_Printer, disable_Printer} = require("../models/Printer");
 
 
+
+// Lấy danh sách tất cả máy in từ hệ thống
 async function showAllPrinter(req, res, next) {
   try {
     const result = await show_All_Printer();
@@ -10,7 +12,7 @@ async function showAllPrinter(req, res, next) {
   }
 }
 
-
+//Thêm một máy in mới vào hệ thống
 async function addPrinter(req, res, next) {
   try {
     const result = await add_Printer(req.body);
@@ -19,7 +21,7 @@ async function addPrinter(req, res, next) {
     next(err);
   }
 }
-
+// Xóa một máy in dựa trên printer_id
 async function deletePrinter(req, res, next) {
   try {
     const id = req.params.printer_id
@@ -31,7 +33,7 @@ async function deletePrinter(req, res, next) {
     next(err);
   }
 }
-
+//Tìm kiếm một máy in dựa trên printer_id
 async function searchPrinter(req, res, next) {
   try {
     const id = req.params.printer_id
@@ -43,7 +45,7 @@ async function searchPrinter(req, res, next) {
     next(err);
   }
 }
-
+//Lấy thông tin chi tiết của một máy in theo printer_id
 async function infoPrinter(req, res, next) {
   try {
     const id = req.params.printer_id
@@ -55,7 +57,7 @@ async function infoPrinter(req, res, next) {
     next(err);
   }
 }
-
+//Cập nhật thông tin của một máy in
 async function editPrinter(req, res, next) {
   try {
     const id = req.body.printer_id
@@ -67,7 +69,7 @@ async function editPrinter(req, res, next) {
     next(err);
   }
 }
-
+//Kích hoạt một máy in
 async function enablePrinter(req, res, next) {
   try {
     const id = req.params.printer_id
@@ -79,7 +81,7 @@ async function enablePrinter(req, res, next) {
     next(err);
   }
 }
-
+//Vô hiệu hóa một máy in
 async function disablePrinter(req, res, next) {
   try {
     const id = req.params.printer_id

@@ -1,31 +1,67 @@
-import { useContext, useEffect } from "react";
-import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
-import homeBG from "../assets/img/home_bg.png";
-import homwpage from "../assets/img/homepage0.png";
+
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import homwpage from "../assets/img/lms.jpg";
+import baotri from "../assets/img/baotri.png";
+import '../assets/styles/home.css'
+import {  Container, Card, Row, Col } from 'react-bootstrap';
+const AnnouncementCard = ({ title, content, imageUrl }) => (
+  <Card className="h-100 shadow-sm">
+    <div style={{ height: '300px', overflow: 'hidden' }}>
+      <Card.Img 
+        variant="top" 
+        src={imageUrl} 
+        style={{ 
+          width: '100%', 
+          height: '300px', 
+          objectFit: 'cover',
+           objectPosition: 'center'
+        }}
+        alt={content}
+      />
+    </div>
+    <Card.Body>
+      <div className="text-secondary mb-2">{title}</div>
+      <Card.Title>
+        <a href="#" className="text-primary text-decoration-none">
+          {content}
+        </a>
+      </Card.Title>
+    </Card.Body>
+  </Card>
+);
 
 function Home() {
+  const announcements = [
+    {
+      id: 1,
+      title: "Thông báo:",
+      content: "Nội dung chỉnh sửa hệ thống ngày 20/10",
+      imageUrl: homwpage  // Replace with actual image path
+    },
+    {
+      id: 2,
+      title: "Thông báo",
+      content: "Tạm dừng cung cấp hệ thống từ 20h 19/10",
+      imageUrl: baotri // Replace with actual image path
+    }
+  ];
   return (
-    <div className="homepage0 bg-primary-subtle  " style={{ backgroundColor: '#F4E7FB', color: 'white' }}>
-      <h1
-        className="mt-5 mb-5 text-center fw-bolder text-primary"
-        style={{ 
-          fontSize: "72px",
-          letterSpacing: "tight",
-          lineHeight: "96px"
-        }}
-      >
-        WELCOME TO SSPS
-      </h1>
-      <div class="d-flex justify-content-center h-300">
-        <div class="rounded-3 padding-6 bg-primary-subtle" style={{ borderRadius:"40px" }} >
-          <img src={homwpage} alt="homepage0" className="h-150" />
-        </div>
-      </div>
-      <h2 class="text-center mt-5 font-weight-bold text-primary fw-bolder" style={{ fontSize: "32px" }} >Dịch vụ in ấn thông minh cho sinh viên Bách Khoa</h2>
-  <br/>
-  <br/>
+    <div className="min-vh-100 d-flex flex-column my-5">
+    
+      <Container className="flex-grow-1">
+        <h1 className="text-primary mb-5 pb-2 border-bottom border-3">
+        Dịch vụ in ấn thông minh cho sinh viên Bách Khoa
+        </h1>
+        <Row className="g-4">
+          {announcements.map(announcement => (
+            <Col key={announcement.id} md={6}>
+              <AnnouncementCard {...announcement} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }

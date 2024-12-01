@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProgressiveImage from "react-progressive-graceful-image";
 import '../../assets/styles/FileUpload.css';
-import fileupload_bg from '../../assets/img/fileupload_bg.jpg';
+import fileupload_bg from '../../assets/img/lms.jpg';
 import FileCards from './FileCard';
 import UploadArea from './UploadArea';
 

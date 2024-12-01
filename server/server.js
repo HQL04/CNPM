@@ -1,3 +1,5 @@
+
+//Khởi tạo Express và các thư viện cần thiết
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -5,7 +7,7 @@ require('dotenv').config();
 
 const apiRouter = require('./routes');
 
-// App setup
+// Cấu hình server
 const app = express();
 const port = process.env.PORT || 8080;
 const corsOptions = {
@@ -20,16 +22,16 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
-// Every route should start with /api
+//  Định tuyến API
 app.use('/api', apiRouter);
 
-// Error handlers
+//  Xử lý lỗi
 app.use((err, req, res, next) => {
   console.log(err.stack);
-  res.status(500).send('Server đang bị lỗi. Vui lòng thử lại sau!');
+  res.status(500).send('Server đang bị lỗi. ');
 });
 
-// Listen for requests
+//  Khởi động server
 app.listen(port, () => {
-  console.log(`Server running on ${port}...`);
+  console.log(`Server đang chạy ở cổng ${port}...`);
 });

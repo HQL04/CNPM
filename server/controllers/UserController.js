@@ -3,22 +3,24 @@ const jwt = require('jsonwebtoken');
 const { getCustomerByID, getCustomerByEmail, setCustomerLastUsed } = require('../models/Customer');
 const { getSPSOByID, getSPSOByUsername, setSPSOLastUsed } = require('../models/SPSO');
 
+
+//Xử lý đăng nhập cho khách hàng (customer)
 async function loginCustomer(req, res, next) {
   try {
     const result = await getCustomerByEmail(req.body.email);
     
-    // user does not exists
+    // không tồn tại người dùng
     if (!result) {
-      return res.status(400).send('Nhập sai email! Vui lòng thử lại.');
+      return res.status(400).send('Nhập sai email rồi :((  Vui lòng thử lại.');
     }
     
-    // check password
+    // kiểm tra mật khẩu 
     bcrypt.compare(req.body.password, result.password, async (bErr, bResult) => {
       if (bErr) {
         return next(bErr);
       }
       
-      // if wrong password, deny login
+      // sai mật khẩu -> nhập lại mk
       if (!bResult) {
         return res.status(401).send('Nhập sai mật khẩu! Vui lòng thử lại.');
       }
@@ -47,13 +49,16 @@ async function loginCustomer(req, res, next) {
   }
 }
 
+
+//Xử lý đăng nhập cho nhân viên SPSO
+
 async function loginSPSO(req, res, next) {
   try {
     const result = await getSPSOByUsername(req.body.username);
     
     // user does not exists
     if (!result) {
-      return res.status(400).send('Nhập sai email! Vui lòng thử lại.');
+      return res.status(400).send('Nhập sai email rồi :(( ! Vui lòng thử lại.');
     }
     
     // check password
@@ -91,6 +96,8 @@ async function loginSPSO(req, res, next) {
   }
 }
 
+
+//Lấy thông tin người dùng dựa trên user_id (customer hoặc SPSO)
 async function getUserByID(req, res, next) {
   try {
     const id = req.userInfo.id, isSPSO = req.userInfo.isSPSO;
@@ -105,12 +112,12 @@ async function getUserByID(req, res, next) {
       result = await getCustomerByID(id);
     }
     
-    // user does not exists, which should never occur after authentication but just in case...
+    // Nếu không tìm thấy, trả về lỗi.
     if (!result) {
-      return res.status(400).send('Sao lại thế này????');
+      return res.status(400).send('Không tìm thấy thông tin');
     }
     
-    // Modify data before sending
+    // 
     delete result.password;
     result.last_used = new Date(result.last_used);
     

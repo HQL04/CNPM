@@ -1,0 +1,42 @@
+.card {
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img-top {
+    border-bottom: 1px solid #eee;
+  }
+  
+  h1 {
+    color: #003876;
+    border-bottom: 3px solid #003876;
+    padding-bottom: 10px;
+  }
+  
+  .card-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card a {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+  
+  .card a:hover {
+    color: #0056b3 !important;
+  }
+  .card-img-container {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
