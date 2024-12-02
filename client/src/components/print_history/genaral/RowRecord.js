@@ -12,8 +12,6 @@ function RowRecord({ data }) {
       {user.isSPSO && <td className='text-start'>{data.customer_name}</td>}
       <td className='text-start'>{data.document_name}</td>
       <td className='text-start'>{data.printer_name}</td>
-      <td>{data.time_start.toLocaleString('en-GB')}</td>
-      <td>{data.time_end.toLocaleString('en-GB')}</td>
       <td><StatusTag status={data.status} /></td>
       <td>
         <Link to={`${data.print_id}`}>

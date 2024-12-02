@@ -1,6 +1,6 @@
 import Searchbar from "../components/printer_management/Searchbar"
 import PrinterList from "../components/printer_management/PrinterList"
-import Loading from "../components/utils/Loading";
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie';
@@ -47,7 +47,7 @@ export default function PrinterManagement() {
         return (
             <div className='col-12 my-3 text-center'>
                 <h3>Dữ liệu đang tải, vui lòng chờ</h3>
-                <Loading />
+                
             </div>
         );
     }

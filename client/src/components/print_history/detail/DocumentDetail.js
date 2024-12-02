@@ -7,11 +7,11 @@ function DocumentDetail({ data }) {
       value: data.document_name
     },
     {
-      name: 'Kiểu tệp',
+      name: 'Định dạng',
       value: data.file_type
     },
     {
-      name: 'Số trang của tài liệu',
+      name: 'Số trang ',
       value: data.no_of_pages
     }
   ];

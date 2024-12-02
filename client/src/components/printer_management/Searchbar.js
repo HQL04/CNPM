@@ -65,7 +65,7 @@ export default function Searchbar() {
                         <div className="col-3 col-sm-4">
                             <button 
                                 type="button" 
-                                className="btn btn-primary float-end"
+                                className="btn btn-success float-end"
                                 onClick={handleOpenFormModal}
                             >
                                 Thêm máy in

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie';
-import Loading from "../components/utils/Loading.js";
+
 import FileUpload from "../components/file_upload/FileUpload";
 
 function PrintService() {
@@ -43,7 +43,7 @@ function PrintService() {
       });
   }, [cookies]);
   
-  if (loading) return <Loading />;
+
   
   return (
     <FileUpload id = {user_id} />

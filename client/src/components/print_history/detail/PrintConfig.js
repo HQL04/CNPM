@@ -3,7 +3,7 @@ import GeneralDetailTable from "./GeneralDetailTable";
 function PrintConfig({ data }) {
   const printConfigData = [
     {
-      name: 'Cỡ giấy',
+      name: 'Định dạng giấy',
       value: data.page_size
     },
     {

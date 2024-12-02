@@ -19,7 +19,7 @@ export default function PrinterList() {
             <div className="row">
                 {
                     printers.map((printer, index) => (
-                    <div className="col border border-black border-2 rounded m-1 p-1" key={index}>
+                    <div className="col border border-primary border-2 rounded m-1 p-1" key={index}>
                         <Printer id={printer.printer_id} name={printer.name}/>
                     </div>
                     ))

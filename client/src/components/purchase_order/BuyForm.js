@@ -32,12 +32,12 @@ function BuyForm() {
     >
       <button
         type="button"
-        className="btn btn-primary my-2 my-md-0"
+        className="btn btn-primary my-3 my-md-0"
         data-bs-toggle="modal"
         data-bs-target="#buy-modal"
         id="buy-modal-trigger"
       >
-        Mua
+        Mua trang
       </button>
       <div
         className="modal fade"
@@ -49,7 +49,7 @@ function BuyForm() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="buy-form-label">
+              <h1 className="modal-title fs-8" id="buy-form-label">
                 Mua trang in
               </h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" id='modal-close'></button>
@@ -72,7 +72,7 @@ function BuyForm() {
                 className="alert alert-danger py-3 " 
                 role="alert"
               >
-                <p className='m-0'>Vui lòng nhập một số hợp lệ.</p>
+                <p className='m-0'>Vui lòng nhập số trang.</p>
               </div>}
             </div>
             <div className="modal-footer">

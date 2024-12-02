@@ -4,7 +4,6 @@ import { useState, useEffect, useContext } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
-import Loading from '../components/utils/Loading';
 import History from '../components/print_history/genaral/History';
 
 function PrintHistory() {
@@ -50,7 +49,6 @@ function PrintHistory() {
     historyElement = (
       <div className='col-12 my-3 text-center'>
         <h3>Dữ liệu đang tải, vui lòng chờ</h3>
-        <Loading />
       </div>
     );
   }

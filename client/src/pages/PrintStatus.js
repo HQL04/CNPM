@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie'
 import { useNavigate } from "react-router-dom";
-import Loading from "../components/utils/Loading.js";
+
 import PagingTable from '../components/print_status/PagingTable';
 
 function PrintStatus(){
@@ -56,7 +56,7 @@ function PrintStatus(){
       return (
         <div className='col-12 my-3 text-center'>
             <h3>Dữ liệu đang tải, vui lòng chờ</h3>
-            <Loading />
+            
         </div>
       );
     };

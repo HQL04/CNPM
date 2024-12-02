@@ -5,17 +5,16 @@ import RowRecord from "./RowRecord";
 function PrintHistoryTable({ dataRows }) {
   const { user } = useContext(UserContext);
   return (
-    <table className="table table-hover" id='history-table'>
+    <div className="overflow-x-auto">
+      <table className="w-full table-auto border-collapse bg-white" id='history-table'>
       <thead>
-        <tr className="align-middle">
-          <th scope="col">ID</th>
+        <tr className="bg-gray-100">
+          <th scope="col p-3 text-left font-semibold border-b w-16">ID</th>
           {user.isSPSO && <th scope="col">Người đặt in</th>}
-          <th scope="col">Tên tài liệu</th>
-          <th scope="col">Máy in</th>
-          <th scope="col">Thời gian bắt đầu</th>
-          <th scope="col">Thời gian kết thúc</th>
-          <th scope="col">Trạng thái</th>
-          <th scope="col">Xem chi tiết</th>
+          <th scope="col p-3 text-left font-semibold border-b">Tên tài liệu</th>
+          <th scope="col p-3 text-left font-semibold border-b">Máy in</th>
+          <th scope="col p-3 text-left font-semibold border-b">Trạng thái</th>
+          <th scope="col p-3 text-left font-semibold border-b">Xem chi tiết</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +23,8 @@ function PrintHistoryTable({ dataRows }) {
         )}
       </tbody>
     </table>
+    </div>
+    
   );
 }
 

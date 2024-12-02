@@ -80,7 +80,7 @@ function Profile() {
               </>
               :
               <tr>
-                <th scope="row">Số dư (trang A4):</th>
+                <th scope="row">Số trang khả dụng (trang A4):</th>
                 <td>{userData.balance}</td>
               </tr>
               }

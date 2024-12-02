@@ -48,9 +48,9 @@ function Home() {
     }
   ];
   return (
-    <div className="min-vh-100 d-flex flex-column my-5">
+    <div className="min-vh-100 d-flex flex-column mt-5">
     
-      <Container className="flex-grow-1">
+      <Container className="flex-grow">
         <h1 className="text-primary mb-5 pb-2 border-bottom border-3">
         Dịch vụ in ấn thông minh cho sinh viên Bách Khoa
         </h1>

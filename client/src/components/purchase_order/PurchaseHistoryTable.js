@@ -10,7 +10,7 @@ function PurchaseHistoryTable({ dataRows }) {
           <th scope="col">Số tiền</th>
           <th scope="col">Ngày thanh toán</th>
           <th scope="col">Trạng thái</th>
-          <th scope="col">Thanh toán</th>
+          
         </tr>
       </thead>
       <tbody>

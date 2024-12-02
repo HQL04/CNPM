@@ -47,7 +47,7 @@ function FileUpload({ id }) {
             <div 
                 className="container-fluid position-absolute top-0 rounded-4" 
                 style={{ 
-                    backgroundColor: 'rgba(255, 255, 255, 0.78)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
                     width: '80%', height: '80%',
                     margin: '5% 10%',
                     padding: '2% 0%',
@@ -56,11 +56,9 @@ function FileUpload({ id }) {
                 <div className="row d-flex justify-content-center">
                     <div className={`col-6 ${files.length === 0 ? 'text-center' : ''}`}>
                         <div className="big-text fw-bold">
-                            Tải tài liệu
+                            IN TÀI LIỆU
                         </div>
-                        <div className="text my-2">
-                            Tải tài liệu bạn muốn in
-                        </div>
+                       <br/>
                     </div>
                     {files.length !== 0 ? <div className="col-5"></div>:''}
                 </div>
@@ -78,7 +76,7 @@ function FileUpload({ id }) {
                         }}
                     >
                         <div className="text-2 fw-bold">
-                            Tài liệu đã tải
+                            Tài liệu đã tải lên
                         </div>
                         <FileCards files={files} />
                     </div>

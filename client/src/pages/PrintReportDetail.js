@@ -4,7 +4,7 @@ import { useCookies } from 'react-cookie';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import { IoPrintOutline } from "react-icons/io5";
-import Loading from '../components/utils/Loading';
+
 import DetailTable from '../components/print_report/DetailTable';
 import ReportChart from '../components/print_report/Chart';
 
@@ -64,7 +64,7 @@ function PrintReportDetail(){
     if (loading) return (
         <div className='my-3 text-center'>
             <h3>Dữ liệu đang tải, vui lòng chờ</h3>
-            <Loading />
+          
         </div>
     );
 

@@ -10,7 +10,7 @@ function ConfirmModal({ state, confirm_state, campus, room }){
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {confirm_state? `Đặt in thành công! Vui lòng lấy tài liệu của bạn tại ${campus}, Phòng ${room}`:'Số dư của bạn không đủ! Vui lòng nạp thêm!'}
+                {confirm_state? `Đặt in thành công! Xin tui lòng đến ${campus}, Phòng ${room} lấy tài liệu `:'Số dư không đủ :(('}
             </Modal.Body>
             <Modal.Footer>
                 <Link 

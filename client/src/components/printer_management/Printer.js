@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react' 
 import axios from 'axios'
 import Modal from 'react-bootstrap/Modal'
+import printerimg from '../../assets/img/printer.jpg'
 
 export default function Printer(props) {
     const [printer, setPrinter] = useState({});
@@ -252,15 +253,16 @@ export default function Printer(props) {
         <div>
             <div className="text-center">
                 <img 
-                    src="https://www.xerox.com/assets/images/brand_engine/products/hardware/ALB81XX/hero_960x960.png" 
+                    src={printerimg}
                     alt="printer"
                     style={{
-                        width: "190px"
+                        width: "190px",
+                        height: "auto" // Giữ tỷ lệ của hình ảnh
                     }}
                 />
                 <button 
                     type="button" 
-                    className="btn btn-primary mt-1"
+                    className="btn btn-success mt-1"
                     onClick={handleOpenInfoModal}
                 >
                     {props.name}
@@ -277,12 +279,12 @@ export default function Printer(props) {
                 }}
             >
                 <Modal.Header closeButton>
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">Thông tin máy in</h1>
+                    <h1 className="modal-title fs-5 text-success" id="exampleModalLabel">Thông tin máy in</h1>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="container-fluid">
                         <div className="row mt-1 mb-1">
-                            <div className="col-4 mt-2">
+                            <div className="col-4 mt-2 text-info">
                                 Tên máy in:
                             </div>
                             <div className="col">
@@ -290,7 +292,7 @@ export default function Printer(props) {
                             </div>
                         </div>
                         <div className="row mt-1 mb-1">
-                            <div className="col-4 mt-2">
+                            <div className="col-4 mt-2 text-info">
                                 Hãng sản xuất:
                             </div>
                             <div className="col">
@@ -298,7 +300,7 @@ export default function Printer(props) {
                             </div>
                         </div>
                         <div className="row mt-1 mb-1">
-                            <div className="col-4 mt-2">
+                            <div className="col-4 mt-2 text-info">
                                 Loại máy in:
                             </div>
                             <div className="col">
@@ -306,7 +308,7 @@ export default function Printer(props) {
                             </div>
                         </div>
                         <div className="row mt-1 mb-1">
-                            <div className="col-4 mt-2">
+                            <div className="col-4 mt-2 text-info">
                                 Mô tả:
                             </div>
                             <div className="col">
@@ -314,10 +316,10 @@ export default function Printer(props) {
                             </div>
                         </div>
                         <div className="row mt-1 mb-1">
-                            <div className="col-2 mt-2">
+                            <div className="col-2 mt-2 text-info">
                                 Vị trí:
                             </div>
-                            <div className="col mt-2">
+                            <div className="col mt-2 text-info">
                                 <div>
                                     Cơ sở: 
                                     <select name="campus" id={"campus" + props.id} className="form-control" disabled={isDisabled} defaultValue={printer.loc_campus}>
@@ -326,23 +328,23 @@ export default function Printer(props) {
                                     </select>    
                                 </div>
                             </div>
-                            <div className="col mt-2">
+                            <div className="col mt-2 text-info">
                                 Tòa: 
                                 <input className="form-control" type="text" defaultValue={printer.loc_building} id={"building" + props.id} disabled={isDisabled}/>
                             </div>
-                            <div className="col mt-2">
+                            <div className="col mt-2 text-info">
                                 Phòng: 
                                 <input className="form-control" type="text" defaultValue={printer.loc_room} id={"room" + props.id} disabled={isDisabled}/>
                             </div>
                         </div>
                         <div className="row mt-1 mb-1">
-                            <div className="col-4 mt-2">
+                            <div className="col-4 mt-2 text-info">
                                 Trạng thái:
                             </div>
                             <div className="col">
                                 <select name="status" id={"status" + props.id} className="form-control" disabled={isDisabled} onChange={handleDisablePrinter} defaultValue={printer.status}>
-                                    <option value="running">Đang hoạt động</option>
-                                    <option value="disabled">Đang tắt</option>
+                                    <option className='text-success' value="running">Đang hoạt động</option>
+                                    <option className='text-danger' value="disabled">Đang tắt</option>
                                 </select>
                             </div>
                         </div>
@@ -354,7 +356,7 @@ export default function Printer(props) {
                 <Modal.Footer>
                     <button 
                         type="button" 
-                        className="btn btn-primary" 
+                        className="btn btn-info" 
                         id="update" 
                         onClick={handleUpdateInfoPrinter}
                     >

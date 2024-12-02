@@ -7,7 +7,7 @@ function PrintOrder({ data }) {
   const { user } = useContext(UserContext);
   const printOrderData = [
     {
-      name: 'ID',
+      name: 'ID tài liệu ',
       value: data.print_id
     },
     {
@@ -18,14 +18,14 @@ function PrintOrder({ data }) {
       name: 'Máy in',
       value: data.printer_name
     },
-    {
-      name: 'Thời gian bắt đầu',
-      value: new Date(data.time_start).toLocaleString('en-GB')
-    },
-    {
-      name: 'Thời gian kết thúc',
-      value: new Date(data.time_end).toLocaleString('en-GB')
-    },
+    // {
+    //   name: 'Thời gian bắt đầu',
+    //   value: new Date(data.time_start).toLocaleString('en-GB')
+    // },
+    // {
+    //   name: 'Thời gian kết thúc',
+    //   value: new Date(data.time_end).toLocaleString('en-GB')
+    // },
     {
       name: 'Trạng thái',
       value: <StatusTag status={data.status} />

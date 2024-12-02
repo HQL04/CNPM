@@ -94,14 +94,14 @@ function FileCards({ files, items_per_page = 3 }) {
                 </li>
             ))}
         </ul>
-        <Paging 
+        {/* <Paging 
             startPage={startPage}
             currentPage={currentPage}
             endPage={endPage}
             paginate={paginate}
             indexOfLastItem={indexOfLastItem} 
             length={totalItems}
-        />
+        /> */}
         </>
     );
 }

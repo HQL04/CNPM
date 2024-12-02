@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate  } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import Loading from "../components/utils/Loading.js";
+
 import InfoTable from '../components/print_confirm/InfoTable';
 import ConfirmModal from '../components/print_confirm/ConfirmModal';
 
@@ -14,7 +14,7 @@ function PrintConfirm() {
 
     const navigate = useNavigate();
     const [cookies, setCookie, removeCookie] = useCookies();
-    const [loading, setLoading] = useState(true);
+
 
     const [name, setName] = useState('');
     const [numPagesToBePrinted, setNumPagesToBePrinted] = useState(0);
@@ -31,7 +31,7 @@ function PrintConfirm() {
     const [confirmState, setConfirmState] = useState(true);
 
     useEffect(() => {
-        setLoading(true);
+        // setLoading(true);
 
         const fetchData = () => {
             if (!cookies.auth) {
@@ -121,7 +121,7 @@ function PrintConfirm() {
             }
           
             setTimeout(() => {
-                setLoading(false);
+                
             }, 200);
         };
           
@@ -166,28 +166,28 @@ function PrintConfirm() {
         }
     };
     
-    if (loading) return <Loading loading={loading}/>;
+
 
     return (
         <div
             className="d-flex justify-content-center align-items-center"
             style={{
-                background: 'linear-gradient(180deg, #70D2E5 0%, #FFFFFF 100%)',
-                padding: '7% 0%',
+                background: '#E7F5DC',
+                padding: '9% 0%',
             }}
         >
             <div
                 className="container rounded-4 p-3"
-                style={{ background: 'rgba(255, 255, 255, 0.76)', width: '60%' }}
+                style={{ background: 'rgba(255, 255, 255, 0.9)', width: '60%' }}
             >
                 <div
                     className="text-center fs-1 fw-bold w-50 mx-auto"
                     style={{
-                        borderBottom: `1px solid var(--color-bk1)`,
+                        borderBottom: `2px solid #4C1D3D`,
                         color: 'var(--color-bk1)',
                     }}
                 >
-                    Xác nhận in
+                    Thông tin in
                 </div>
                 <InfoTable
                     name={name}
@@ -198,18 +198,19 @@ function PrintConfirm() {
                     campus={campus} room={room}                    
                 />
                 <div className="d-flex justify-content-center">
-                <button
-                    className="col-3 btn btn-primary fw-medium mx-2"
-                    onClick={handleSubmission}
-                >
-                    Xác nhận
-                </button>
+                
                 <Link
                     className="col-3 btn btn-danger fw-medium mx-2"
                     to="/print"
                 >
                     Hủy
                 </Link>
+                <button
+                    className="col-3 btn btn-primary fw-medium mx-5"
+                    onClick={handleSubmission}
+                >
+                    Xác nhận
+                </button>
                 </div>
             </div>
             <ConfirmModal state={modalState} confirm_state={confirmState} campus={campus} room={room}/>

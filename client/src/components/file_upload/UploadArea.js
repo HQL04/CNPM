@@ -1,5 +1,5 @@
 import ProgressiveImage from "react-progressive-graceful-image";
-import upload_button from '../../assets/img/upload_button.png';
+import upload_button from '../../assets/img/upload-file.png';
 
 function UploadArea({ setLength }){
 
@@ -44,9 +44,10 @@ function UploadArea({ setLength }){
 
     return (
         <div 
-            className="col-5 d-flex justify-content-center bg-white rounded-4 p-2" 
+            className="col-5 d-flex justify-content-center bg-primary rounded-4 p-2" 
             style={{ 
-                border: 'dashed 1px rgba(0, 0, 0, 1)',
+                backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                border: 'solid 1px rgba(255, 255, 255, 1)',
                 width: '50%', height:'100%' 
             }}
         >
@@ -54,7 +55,7 @@ function UploadArea({ setLength }){
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
                 className="text-center" 
-                style={{ height: '85%' }}
+                style={{ height: '80%' }}
             >
                 <ProgressiveImage src={upload_button}>
                     {(src, loading) => (
@@ -66,8 +67,9 @@ function UploadArea({ setLength }){
                         draggable="false"
                     />)}
                 </ProgressiveImage>
-                <div className="text">Kéo thả tài liệu tại đây</div>
-                <div className="text">-- Hoặc --</div>
+                <div className="text">Thả tài liệu tại đây</div>
+                <br/>
+              
                 <input
                     id = "fileInput"
                     name="file" type = "file"

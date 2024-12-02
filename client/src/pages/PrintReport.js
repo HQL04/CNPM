@@ -4,7 +4,7 @@ import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import FilterBar from "../components/print_report/FilterBar";
 import ReportTable from "../components/print_report/ReportTable"
-import Loading from '../components/utils/Loading';
+
 
 
 function PrintReport(){
@@ -129,7 +129,6 @@ function PrintReport(){
         return (
             <div className='my-3 text-center'>
                 <h3>Dữ liệu đang tải, vui lòng chờ</h3>
-                <Loading />
             </div>
         );
     }

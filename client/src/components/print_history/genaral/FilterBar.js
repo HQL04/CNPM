@@ -43,36 +43,7 @@ function FilterBar({ printerList, handleChoosePrinter, handleTimeChange, handleC
           )}
         </select>
       </div>
-      <label 
-        htmlFor='timeStart' 
-        className='col-4 col-md-3 col-lg-auto col-form-label'
-      >
-        Chọn ngày bắt đầu
-      </label>
-      <div className='col-8 col-md-9 col-lg mb-2'>
-        <input 
-          type='date' 
-          className='form-control' 
-          id='timeStart'
-          name='timeStart'
-          onChange={handleTimeChange}
-        />
-      </div>
-      <label 
-        htmlFor='timeEnd' 
-        className='col-4 col-md-3 col-lg-auto col-form-label'
-      >
-        Chọn ngày kết thúc
-      </label>
-      <div className='col-8 col-md-9 col-lg mb-2'>
-        <input 
-          type='date' 
-          className='form-control' 
-          id='timeEnd'
-          name='timeEnd'
-          onChange={handleTimeChange}
-        />
-      </div>
+      
     </div>
   );
 }
