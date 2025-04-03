@@ -37,7 +37,3 @@ To log in as a student:
 To log in as an admin:
 * Username: `admin1`
 * Password: `123456789`
-
-
-
-
